@@ -5,10 +5,6 @@ const dotenv = require('dotenv').config()
 const PORT = process.env.PORT || 4000;
 const authRouter=require("./routes/authRoute");
 dbConnect();
-app.use('/', (req, res) => {
-    res.send("Hello from Server Side");
-});
-
 
 app.use("/api/user", authRouter);
 app.listen(PORT, () => {
